@@ -68,6 +68,10 @@ public class Anagram {
 			ch = str.charAt(i);
 			if (Character.isLetter(ch))
 				string = string + Character.toLowerCase(ch);
+			else if (ch == ' ')
+			{
+				string = string + ' ';
+			}
 
 		}
 
