@@ -28,24 +28,24 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		str1 = preProcess(str1);
-		str2 = preProcess(str2);
+		str1 = preProcess(str1); // clean the strings
+		str2 = preProcess(str2); // clean the strings
 		int len1 = str1.length();
 		int len2 = str2.length();
-		if (len1 != len2)
+		if (len1 != len2) // if length are diffrent nos anagram
 			return false;
 		boolean isAn = true; 
 		char ch1, ch2 ;
-		for ( int i = 0 ; i < len1 ; i++)
+		for ( int i = 0 ; i < len1 ; i++) // go over each char
 		{
-			ch1 = str1.charAt(i);
-			for (int j = 0 ; j < len2 ; j++)
+			ch1 = str1.charAt(i); // put cuurent char to check
+			for (int j = 0 ; j < len2 ; j++) // go over try to find the char
 			{
-				ch2 = str2.charAt(j);
-				if (ch1 == ch2)
+				ch2 = str2.charAt(j); // put cuurent char to check
+				if (ch1 == ch2) // checking to see 
 				{
 					isAn = true;
-					break;
+					break; // stop the inside loop if found
 				}
 				else
 					isAn = false;
@@ -63,11 +63,11 @@ public class Anagram {
 	public static String preProcess(String str) {
 		String string = "" ; 
 		char ch;
-		for (int i = 0 ; i < str.length() ; i++)
+		for (int i = 0 ; i < str.length() ; i++) // check each char
 		{
 			ch = str.charAt(i);
-			if (Character.isLetter(ch))
-				string = string + Character.toLowerCase(ch);
+			if (Character.isLetter(ch)) // if char is a letter
+				string = string + Character.toLowerCase(ch); // adding to the new string
 
 
 		}
@@ -81,12 +81,12 @@ public class Anagram {
 		String string = "" ; 
 		int random ;
 		char ch;
-		while (str.length() > 0)
+		while (str.length() > 0) // as long its not empty
 		{
-			random = (int) ((Math.random()) * str.length());
+			random = (int) ((Math.random()) * str.length()); // random index
 			ch = str.charAt(random);
-			string = string + ch ;
-			str = str.substring(0, random) +str.substring(random + 1) ;
+			string = string + ch ; // adding string
+			str = str.substring(0, random) +str.substring(random + 1) ; // remove the char from original
 		}
 		
 		return string;
