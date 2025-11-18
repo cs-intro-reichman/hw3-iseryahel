@@ -66,8 +66,11 @@ public class Anagram {
 		for (int i = 0 ; i < str.length() ; i++) // check each char
 		{
 			ch = str.charAt(i);
-			if (Character.isLetter(ch)) // if char is a letter
-				string = string + Character.toLowerCase(ch); // adding to the new string
+			if (ch >= 'A' && ch <= 'Z')// if capital change to lower
+				ch = (char) (ch + 32);
+
+			if ((ch >= 'a' && ch <= 'z') || ch == ' ') // if lower or space
+				string = string + ch; // adding to the new string
 
 
 		}
