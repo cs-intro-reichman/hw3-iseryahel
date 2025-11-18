@@ -69,7 +69,7 @@ public class Anagram {
 			if (ch >= 'A' && ch <= 'Z')// if capital change to lower
 				ch = (char) (ch + 32);
 
-			if ((ch >= 'a' && ch <= 'z') || ch == ' ') // if lower or space
+			if (ch >= 'a' && ch <= 'z') // if lower or space
 				string = string + ch; // adding to the new string
 
 
