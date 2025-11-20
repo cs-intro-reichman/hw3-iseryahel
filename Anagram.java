@@ -32,10 +32,13 @@ public class Anagram {
 		str2 = preProcess(str2); // clean the strings
 		int len1 = str1.length();
 		int len2 = str2.length();
+
 		if (len1 != len2) // if length are diffrent nos anagram
 			return false;
+
 		boolean isAn = true; 
 		char ch1, ch2 ;
+
 		for ( int i = 0 ; i < len1 ; i++) // go over each char
 		{
 			ch1 = str1.charAt(i); // put cuurent char to check
@@ -63,6 +66,7 @@ public class Anagram {
 	public static String preProcess(String str) {
 		String string = "" ; 
 		char ch;
+
 		for (int i = 0 ; i < str.length() ; i++) // check each char
 		{
 			ch = str.charAt(i);
@@ -84,6 +88,7 @@ public class Anagram {
 		String string = "" ; 
 		int random ;
 		char ch;
+		
 		while (str.length() > 0) // as long its not empty
 		{
 			random = (int) ((Math.random()) * str.length()); // random index

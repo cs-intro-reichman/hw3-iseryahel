@@ -32,6 +32,7 @@ public class Algebra {
 				x1++;
 			} 
 		}
+
 		else if (x2 < 0)
 		{
 			for ( int i = 0 ; i > x2 ; i-- ) // doing the oposite if its negative number
@@ -51,6 +52,7 @@ public class Algebra {
 				x1--;
 			}
 		}	
+		
 		else if (x2 < 0)
 	{
 		for ( int i = 0 ; i > x2 ; i-- ) // doing the oposite if its negative number
@@ -158,7 +160,7 @@ public class Algebra {
 		}
 
 		int num = 0 ;
-		
+
 		while ( times (num , num ) <= x ) 
 		{
 			num++;

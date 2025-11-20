@@ -71,12 +71,13 @@ public class LoanCalc {
 			double mid = (low + high) / 2.0;
         	double fMid = endBalance(loan, rate, n, mid);
 			iterationCounter++;	// counting
-			
+
 			if ( Flow * fMid > 0)
 			{
 				low = mid;
 				Flow= fMid;
 			}
+			
 			else{	
 				high = mid;
           		Fhigh = fMid;
