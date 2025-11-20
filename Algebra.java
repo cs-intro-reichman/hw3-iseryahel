@@ -65,20 +65,24 @@ public class Algebra {
 	public static int times(int x1, int x2) {
 		int sum = 0 ;
 		boolean negative = false ;
+
 		if (x2 < 0) // if negative we chacnge to positive and at the ens switch the number again
 		{
 			negative= !negative;
 			x2 = -x2 ; // here positive
 		}
+
 		if (x1< 0) // if negative we chacnge to positive and at the ens switch the number again
 		{
 			negative= !negative;
 			x1 = -x1 ; // here positive
 		}
+
 		for ( int i = 0 ; i < x2 ; i++ )
 		{
 			sum = plus(sum,x1) ; // each time we add the number to the total x2 times
 		}
+
 		if (negative)// here change the number again
 			sum = -sum;
 		return sum;
@@ -87,6 +91,7 @@ public class Algebra {
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
 		int sum = 1 ;
+
 		if (n < 0) // noe zero divisors
 			return 0;
 
@@ -102,23 +107,28 @@ public class Algebra {
 	public static int div(int x1, int x2) {
 		boolean negative = false ;
 		int sum = 0;
+
 		if (x2 == 0)
 			return 0;
+
 		if (x2 < 0) // checking to see if negative
 		{
 			negative= !negative;
 			x2 = -x2 ;	
 		}
+
 		if (x1 < 0) // checking to see if negative
 		{
 			negative= !negative;
 			x1 = -x1 ;	
 		}
+
 		while (x1 >= x2) // minus the number until we cant
 		{
 			x1 = minus(x1,x2);
 			sum++;
 		}
+
 		if (negative)
 			sum = -sum;
 		return sum;	
@@ -129,6 +139,7 @@ public class Algebra {
 		if (x2 == 0) // NO ZERO DIVISORS
 		{
 			return 0;
+
 		}
 		int first, seconed, last; 
 		first = div (x1,x2); // מוציאים את החלק השלם
@@ -140,11 +151,14 @@ public class Algebra {
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
+
 		if (x < 0) // no negative roots
 		{
 			return 0;
 		}
+
 		int num = 0 ;
+		
 		while ( times (num , num ) <= x ) 
 		{
 			num++;
